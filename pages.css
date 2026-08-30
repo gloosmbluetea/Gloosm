@@ -1,0 +1,356 @@
+/* ================= PRODUCT DETAIL ================= */
+.product-detail { padding: 56px 0; }
+.product-detail-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.product-image {
+  background: var(--cream-2);
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-image img {
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 16px;
+}
+.product-badge {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: rgba(38,51,110,.08);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+.product-info h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+.product-desc {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.price-amount {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.price-detail {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* ================= INGREDIENTS GRID ================= */
+.product-ingredients { padding: 20px 0 56px; }
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.ingredient-card {
+  background: var(--cream-2);
+  border-radius: 20px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.ingredient-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(38,51,110,.1);
+}
+.ingredient-icon {
+  margin-bottom: 14px;
+}
+.ingredient-card h4 {
+  font-size: 17px;
+  margin-bottom: 8px;
+  color: var(--navy);
+}
+.ingredient-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ================= USES GRID ================= */
+.product-uses { padding: 20px 0 56px; }
+.uses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.use-item {
+  background: var(--cream-2);
+  border-radius: 20px;
+  padding: 28px 24px;
+  transition: transform .2s ease;
+}
+.use-item:hover { transform: translateY(-3px); }
+.use-number {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--navy);
+  opacity: .2;
+  display: block;
+  margin-bottom: 10px;
+}
+.use-item h4 {
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.use-item p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ================= ABOUT PAGE ================= */
+.about-story { padding: 56px 0; }
+.about-story-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.about-story-img {
+  border-radius: 24px;
+  overflow: hidden;
+}
+.about-story-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+}
+.about-story-copy h2 {
+  font-size: clamp(26px, 3vw, 36px);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.about-story-copy p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.about-values { padding: 20px 0 56px; }
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.value-card {
+  background: var(--cream-2);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform .2s ease;
+}
+.value-card:hover { transform: translateY(-3px); }
+.value-card .value-emoji {
+  font-size: 36px;
+  margin-bottom: 14px;
+  display: block;
+}
+.value-card h4 {
+  font-size: 19px;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.value-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ================= CONTACT PAGE ================= */
+.contact-section { padding: 56px 0; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+.contact-form-card {
+  background: var(--cream-2);
+  border-radius: 24px;
+  padding: 40px;
+}
+.contact-form-card h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.contact-form-card > p {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.form-group {
+  margin-bottom: 18px;
+}
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 6px;
+  letter-spacing: .04em;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #ddd5c8;
+  border-radius: 12px;
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--cream);
+  transition: border-color .2s ease;
+  outline: none;
+}
+.form-group input:focus,
+.form-group textarea:focus { border-color: var(--navy); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+.btn-submit:hover { background: var(--navy-deep); transform: translateY(-2px); }
+
+.contact-info-side h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.contact-info-side > p {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.contact-info-list { list-style: none; }
+.contact-info-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid #ddd5c8;
+  font-size: 15px;
+  color: var(--ink);
+}
+.contact-info-list li:last-child { border-bottom: none; }
+.contact-info-list .ci-icon {
+  width: 42px; height: 42px;
+  background: var(--cream-2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.contact-info-list .ci-icon svg { stroke: var(--navy); }
+.contact-info-list h4 {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.contact-info-list p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ================= LEGAL PAGES ================= */
+.legal-content { padding: 56px 0; }
+.legal-content .container { max-width: 800px; }
+.legal-content h2 {
+  font-size: 24px;
+  margin: 32px 0 12px;
+  color: var(--navy);
+}
+.legal-content h2:first-child { margin-top: 0; }
+.legal-content p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.legal-content ul {
+  margin: 0 0 14px 24px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ================= RESPONSIVE (PAGES) ================= */
+@media (max-width: 768px) {
+  .product-detail-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .product-image { padding: 20px; border-radius: 16px; }
+  .product-image img { max-height: 280px; }
+  .product-badge { font-size: 10px; padding: 5px 12px; }
+  .product-info h2 { font-size: 22px; }
+  .product-desc { font-size: 13px; }
+  .price-amount { font-size: 28px; }
+  .price-detail { font-size: 14px; }
+
+  .ingredients-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .ingredient-card { padding: 18px 14px; border-radius: 14px; }
+  .ingredient-icon svg { width: 36px; height: 36px; }
+  .ingredient-card h4 { font-size: 14px; }
+  .ingredient-card p { font-size: 11px; }
+
+  .uses-grid { grid-template-columns: 1fr; gap: 14px; }
+  .use-item { padding: 20px 18px; border-radius: 14px; }
+  .use-number { font-size: 24px; }
+  .use-item h4 { font-size: 15px; }
+  .use-item p { font-size: 12px; }
+
+  .about-story-inner { grid-template-columns: 1fr; gap: 24px; }
+  .about-story-copy h2 { font-size: 22px; }
+  .about-story-copy p { font-size: 13px; }
+  .values-grid { grid-template-columns: 1fr; gap: 14px; }
+  .value-card { padding: 22px 18px; }
+  .value-card h4 { font-size: 16px; }
+  .value-card p { font-size: 12px; }
+
+  .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+  .contact-form-card { padding: 24px 18px; border-radius: 16px; }
+  .contact-form-card h2 { font-size: 22px; }
+  .contact-info-side h2 { font-size: 22px; }
+
+  .legal-content { padding: 32px 0; }
+  .legal-content h2 { font-size: 20px; margin: 24px 0 8px; }
+  .legal-content p { font-size: 13px; }
+}
