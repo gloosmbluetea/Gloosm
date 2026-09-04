@@ -126,3 +126,101 @@ document.querySelectorAll('.main-nav a').forEach((a) => {
     });
   });
 })();
+
+// ============ Contact Form WhatsApp Submission ============
+(function () {
+  const contactForm = document.getElementById('contactForm');
+  if (!contactForm) return;
+
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const phoneInput = document.getElementById('phone');
+  const messageInput = document.getElementById('message');
+
+  function showError(input, msgId, message) {
+    const group = input.closest('.form-group');
+    let errSpan = document.getElementById(msgId);
+    if (!errSpan) {
+      errSpan = document.createElement('span');
+      errSpan.id = msgId;
+      errSpan.className = 'error-msg';
+      group.appendChild(errSpan);
+    }
+    errSpan.textContent = message;
+    group.classList.add('error');
+  }
+
+  function clearError(input, msgId) {
+    const group = input.closest('.form-group');
+    group.classList.remove('error');
+    const errSpan = document.getElementById(msgId);
+    if (errSpan) errSpan.textContent = '';
+  }
+
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+
+    // Validate Name
+    const nameVal = nameInput.value.trim();
+    if (nameVal.length < 2) {
+      showError(nameInput, 'nameError', 'Please enter your full name.');
+      isValid = false;
+    } else {
+      clearError(nameInput, 'nameError');
+    }
+
+    // Validate Email
+    const emailVal = emailInput.value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailVal)) {
+      showError(emailInput, 'emailError', 'Please enter a valid email address.');
+      isValid = false;
+    } else {
+      clearError(emailInput, 'emailError');
+    }
+
+    // Validate Phone Number
+    const phoneVal = phoneInput.value.trim();
+    const digitsOnly = phoneVal.replace(/\D/g, '');
+    if (digitsOnly.length < 10) {
+      showError(phoneInput, 'phoneError', 'Please enter a valid phone number (min 10 digits).');
+      isValid = false;
+    } else {
+      clearError(phoneInput, 'phoneError');
+    }
+
+    // Validate Message (more than 3 words)
+    const messageVal = messageInput.value.trim();
+    const words = messageVal.split(/\s+/).filter(w => w.length > 0);
+    if (words.length <= 3) {
+      showError(messageInput, 'messageError', 'Message must be more than 3 words.');
+      isValid = false;
+    } else {
+      clearError(messageInput, 'messageError');
+    }
+
+    if (!isValid) return;
+
+    // Format WhatsApp Message
+    const text = `Hello Gloosm,\n\nI would like to get in touch:\n• *Full Name:* ${nameVal}\n• *Email:* ${emailVal}\n• *Phone:* ${phoneVal}\n• *Message:* ${messageVal}`;
+
+    const whatsappUrl = `https://wa.me/917780177372?text=${encodeURIComponent(text)}`;
+
+    window.open(whatsappUrl, '_blank');
+  });
+
+  // Clear errors on input
+  [nameInput, emailInput, phoneInput, messageInput].forEach((input) => {
+    if (input) {
+      input.addEventListener('input', () => {
+        const group = input.closest('.form-group');
+        if (group.classList.contains('error')) {
+          group.classList.remove('error');
+        }
+      });
+    }
+  });
+})();
+
